@@ -1,0 +1,14 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\source\\nightswitchplugin\\nightswitchplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\intermediate\\build\\win64\\nightswitchplugineditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\intermediate\\build\\win64\\unrealeditor\\development\\nightswitchplugin\\definitions.nightswitchplugin.h",
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\source\\nightswitchplugin\\nightswitchplugin.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

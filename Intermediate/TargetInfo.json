@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "NightSwitchPlugin",
+			"Path": "C:\\Users\\ISILV125\\Documents\\Unreal Projects\\NightSwitchPlugin\\Source\\NightSwitchPlugin.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "NightSwitchPluginEditor",
+			"Path": "C:\\Users\\ISILV125\\Documents\\Unreal Projects\\NightSwitchPlugin\\Source\\NightSwitchPluginEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

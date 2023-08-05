@@ -11,6 +11,8 @@
     <None Include="..\..\Source\NightSwitchPluginEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -25,6 +27,57 @@
     </None>
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
+    </None>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{BB38096A-B391-30DC-A0D4-4F3EA6B44507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\NightSwitcher">
+      <UniqueIdentifier>{DFF232FF-10DA-37A0-B4DD-A99153C182C0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\NightSwitcher\Source">
+      <UniqueIdentifier>{DEFCC9E5-1108-3991-8713-83B407EB404B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\NightSwitcher\Source\NightSwitcher">
+      <UniqueIdentifier>{CCB0EFD9-9D5C-38BE-94A1-0D5573CBF361}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\NightSwitcher\Source\NightSwitcher\NightSwitcher.Build.cs">
+      <Filter>Plugins\NightSwitcher\Source\NightSwitcher</Filter>
+    </None>
+    <Filter Include="Plugins\NightSwitcher\Source\NightSwitcher\Private">
+      <UniqueIdentifier>{B7B7950A-64F0-372B-AD28-F3D16DF09208}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\NightSwitcher\Source\NightSwitcher\Private\NightSwitcher.cpp">
+      <Filter>Plugins\NightSwitcher\Source\NightSwitcher\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\NightSwitcher\Source\NightSwitcher\Private\NightSwitcherCommands.cpp">
+      <Filter>Plugins\NightSwitcher\Source\NightSwitcher\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Plugins\NightSwitcher\Source\NightSwitcher\Private\NightSwitcherStyle.cpp">
+      <Filter>Plugins\NightSwitcher\Source\NightSwitcher\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\NightSwitcher\Source\NightSwitcher\Public">
+      <UniqueIdentifier>{97A4C14B-51DC-3B44-83B8-52F8B646C5DE}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\NightSwitcher\Source\NightSwitcher\Public\NightSwitcher.h">
+      <Filter>Plugins\NightSwitcher\Source\NightSwitcher\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\NightSwitcher\Source\NightSwitcher\Public\NightSwitcherCommands.h">
+      <Filter>Plugins\NightSwitcher\Source\NightSwitcher\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Plugins\NightSwitcher\Source\NightSwitcher\Public\NightSwitcherStyle.h">
+      <Filter>Plugins\NightSwitcher\Source\NightSwitcher\Public</Filter>
+    </ClInclude>
+    <None Include="..\..\Plugins\NightSwitcher\NightSwitcher.uplugin">
+      <Filter>Plugins\NightSwitcher</Filter>
+    </None>
+    <Filter Include="Plugins\NightSwitcher\Resources">
+      <UniqueIdentifier>{47E259DA-8D22-30E4-A41C-9A1994A1C238}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\NightSwitcher\Resources\Icon128.png">
+      <Filter>Plugins\NightSwitcher\Resources</Filter>
+    </None>
+    <None Include="..\..\Plugins\NightSwitcher\Resources\PlaceholderButtonIcon.svg">
+      <Filter>Plugins\NightSwitcher\Resources</Filter>
     </None>
     <Filter Include="Source\NightSwitchPlugin">
       <UniqueIdentifier>{0B9C62D5-40B7-309C-AC9A-B520CE8FD84E}</UniqueIdentifier>

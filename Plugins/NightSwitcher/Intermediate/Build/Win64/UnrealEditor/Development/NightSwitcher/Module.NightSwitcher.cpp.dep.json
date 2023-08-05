@@ -1,0 +1,37 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\plugins\\nightswitcher\\intermediate\\build\\win64\\unrealeditor\\development\\nightswitcher\\module.nightswitcher.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\intermediate\\build\\win64\\nightswitchplugineditor\\development\\unrealed\\sharedpch.unrealed.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\plugins\\nightswitcher\\intermediate\\build\\win64\\unrealeditor\\development\\nightswitcher\\definitions.nightswitcher.h",
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\plugins\\nightswitcher\\source\\nightswitcher\\private\\nightswitcher.cpp",
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\plugins\\nightswitcher\\source\\nightswitcher\\public\\nightswitcher.h",
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\plugins\\nightswitcher\\source\\nightswitcher\\public\\nightswitcherstyle.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyle.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slatecore\\public\\brushes\\slateborderbrush.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slatecore\\public\\brushes\\slateboxbrush.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slatecore\\public\\brushes\\slatecolorbrush.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slatecore\\public\\brushes\\slateroundedboxbrush.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slatecore\\public\\brushes\\slateimagebrush.h",
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\plugins\\nightswitcher\\source\\nightswitcher\\public\\nightswitchercommands.h",
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\plugins\\nightswitcher\\source\\nightswitcher\\private\\nightswitchercommands.cpp",
+            "c:\\users\\isilv125\\documents\\unreal projects\\nightswitchplugin\\plugins\\nightswitcher\\source\\nightswitcher\\private\\nightswitcherstyle.cpp",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyleregistry.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\public\\slate\\slategameresources.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\json\\public\\serialization\\jsonwriter.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\json\\public\\serialization\\jsontypes.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\projects\\public\\versescope.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestylemacros.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

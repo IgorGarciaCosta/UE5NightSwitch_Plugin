@@ -3284,6 +3284,18 @@
 		{
 			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NightSwitcher/Binaries/Win64/UnrealEditor-NightSwitcher.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NightSwitcher/Binaries/Win64/UnrealEditor-NightSwitcher.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NightSwitcher/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
 		}
 	],
 	"RuntimeDependencies": [
@@ -24369,6 +24381,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/NightSwitchPlugin.uproject",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NightSwitcher/NightSwitcher.uplugin",
 			"Type": "UFS"
 		}
 	],

@@ -1,0 +1,10 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.NightSwitcher.cpp.obj": [
+			"NightSwitcher.cpp.obj",
+			"NightSwitcherCommands.cpp.obj",
+			"NightSwitcherStyle.cpp.obj"
+		]
+	}
+}

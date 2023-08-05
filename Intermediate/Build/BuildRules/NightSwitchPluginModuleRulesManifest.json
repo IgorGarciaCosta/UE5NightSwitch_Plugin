@@ -1,6 +1,7 @@
 {
 	"SourceFiles": [
 		"C:\\Users\\ISILV125\\Documents\\Unreal Projects\\NightSwitchPlugin\\Source\\NightSwitchPlugin\\NightSwitchPlugin.Build.cs",
+		"C:\\Users\\ISILV125\\Documents\\Unreal Projects\\NightSwitchPlugin\\Plugins\\NightSwitcher\\Source\\NightSwitcher\\NightSwitcher.Build.cs",
 		"C:\\Users\\ISILV125\\Documents\\Unreal Projects\\NightSwitchPlugin\\Source\\NightSwitchPlugin.Target.cs",
 		"C:\\Users\\ISILV125\\Documents\\Unreal Projects\\NightSwitchPlugin\\Source\\NightSwitchPluginEditor.Target.cs"
 	],

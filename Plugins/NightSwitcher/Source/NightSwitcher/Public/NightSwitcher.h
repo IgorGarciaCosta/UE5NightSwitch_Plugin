@@ -23,6 +23,8 @@ private:
 
 	void RegisterMenus();
 
+	AActor* FindObject(TSubclassOf<AActor> ActorClass);
+
 
 private:
 	TSharedPtr<class FUICommandList> PluginCommands;

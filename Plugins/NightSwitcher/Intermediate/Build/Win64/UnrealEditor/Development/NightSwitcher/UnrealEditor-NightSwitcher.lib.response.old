@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-NightSwitcher.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\ISILV125\Documents\Unreal Projects\NightSwitchPlugin\Intermediate\Build\Win64\NightSwitchPluginEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"C:\Users\ISILV125\Documents\Unreal Projects\NightSwitchPlugin\Plugins\NightSwitcher\Intermediate\Build\Win64\UnrealEditor\Development\NightSwitcher\Module.NightSwitcher.cpp.obj"
+"C:\Users\ISILV125\Documents\Unreal Projects\NightSwitchPlugin\Plugins\NightSwitcher\Intermediate\Build\Win64\UnrealEditor\Development\NightSwitcher\Default.rc2.res"
+/OUT:"C:\Users\ISILV125\Documents\Unreal Projects\NightSwitchPlugin\Plugins\NightSwitcher\Intermediate\Build\Win64\UnrealEditor\Development\NightSwitcher\UnrealEditor-NightSwitcher.lib"

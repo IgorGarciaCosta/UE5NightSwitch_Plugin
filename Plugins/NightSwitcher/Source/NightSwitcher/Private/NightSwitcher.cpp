@@ -4,6 +4,7 @@
 #include "NightSwitcherStyle.h"
 #include "NightSwitcherCommands.h"
 #include "Misc/MessageDialog.h"
+#include "Kismet/GameplayStatics.h"
 #include "ToolMenus.h"
 
 static const FName NightSwitcherTabName("NightSwitcher");
@@ -46,11 +47,7 @@ void FNightSwitcherModule::ShutdownModule()
 void FNightSwitcherModule::PluginButtonClicked()
 {
 	// Put your "OnButtonClicked" stuff here
-	FText DialogText = FText::Format(
-							LOCTEXT("PluginButtonDialogText", "Add code to {0} in {1} to override this button's actions"),
-							FText::FromString(TEXT("FNightSwitcherModule::PluginButtonClicked()")),
-							FText::FromString(TEXT("NightSwitcher.cpp"))
-					   );
+	FText DialogText = FText::FromString("Change sky Time");
 	FMessageDialog::Open(EAppMsgType::Ok, DialogText);
 }
 
@@ -77,6 +74,19 @@ void FNightSwitcherModule::RegisterMenus()
 			}
 		}
 	}
+}
+
+AActor* FNightSwitcherModule::FindObject(TSubclassOf<AActor> ActorClass)
+{
+	TArray<AActor*> FoundActors;
+	UWorld* World = GEditor->GetEditorWorldContext().World();
+	if (World) {
+		UGameplayStatics::GetAllActorsOfClass(World, ActorClass, FoundActors);
+		if (FoundActors.Num()>0) {
+			return FoundActors[0];
+		}
+	}
+	return nullptr;
 }
 
 #undef LOCTEXT_NAMESPACE

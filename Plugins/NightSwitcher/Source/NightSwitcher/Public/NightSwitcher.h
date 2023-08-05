@@ -24,6 +24,7 @@ private:
 	void RegisterMenus();
 
 	AActor* FindActor(TSubclassOf<AActor> ActorClass);
+	AActor* AddActor(TSubclassOf<AActor> ActorClass);
 
 
 private:

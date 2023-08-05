@@ -7,6 +7,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Engine/DirectionalLight.h"
 #include "Components/LightComponent.h"
+#include "Engine/PostProcessVolume.h"
 #include "ToolMenus.h"
 
 static const FName NightSwitcherTabName("NightSwitcher");
@@ -61,6 +62,16 @@ void FNightSwitcherModule::PluginButtonClicked()
 			sun->GetLightComponent()->SetIntensity(1.f);
 		}
 	}
+
+	FoundActor = FindActor(APostProcessVolume::StaticClass());
+	if (!FoundActor) {
+		DialogText = FText::FromString("Post Process volume not found! Creating One");
+		FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+		AActor* PPVolActor = AddActor(APostProcessVolume::StaticClass());
+	}
+	else {
+
+	}
 }
 
 void FNightSwitcherModule::RegisterMenus()
@@ -99,6 +110,13 @@ AActor* FNightSwitcherModule::FindActor(TSubclassOf<AActor> ActorClass)
 		}
 	}
 	return nullptr;
+}
+
+AActor* FNightSwitcherModule::AddActor(TSubclassOf<AActor> ActorClass)
+{
+	ULevel* Level = GEditor->GetEditorWorldContext().World()->GetCurrentLevel();
+	return GEditor->AddActor(Level, ActorClass, FTransform());
+
 }
 
 #undef LOCTEXT_NAMESPACE

@@ -63,15 +63,20 @@ void FNightSwitcherModule::PluginButtonClicked()
 		}
 	}
 
+	APostProcessVolume* PPVol;
+
 	FoundActor = FindActor(APostProcessVolume::StaticClass());
 	if (!FoundActor) {
 		DialogText = FText::FromString("Post Process volume not found! Creating One");
 		FMessageDialog::Open(EAppMsgType::Ok, DialogText);
-		AActor* PPVolActor = AddActor(APostProcessVolume::StaticClass());
+		FoundActor = AddActor(APostProcessVolume::StaticClass());
 	}
-	else {
 
-	}
+	PPVol = Cast< APostProcessVolume>(FoundActor);
+	PPVol->Settings.AutoExposureBias = -3.f;
+	PPVol->Settings.bOverride_AutoExposureBias = true;
+	PPVol->bUnbound = true;//finite extent
+
 }
 
 void FNightSwitcherModule::RegisterMenus()

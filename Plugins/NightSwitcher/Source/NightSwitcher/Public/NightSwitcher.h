@@ -23,7 +23,7 @@ private:
 
 	void RegisterMenus();
 
-	AActor* FindObject(TSubclassOf<AActor> ActorClass);
+	AActor* FindActor(TSubclassOf<AActor> ActorClass);
 
 
 private:

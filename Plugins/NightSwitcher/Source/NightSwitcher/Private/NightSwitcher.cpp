@@ -5,6 +5,8 @@
 #include "NightSwitcherCommands.h"
 #include "Misc/MessageDialog.h"
 #include "Kismet/GameplayStatics.h"
+#include "Engine/DirectionalLight.h"
+#include "Components/LightComponent.h"
 #include "ToolMenus.h"
 
 static const FName NightSwitcherTabName("NightSwitcher");
@@ -49,6 +51,16 @@ void FNightSwitcherModule::PluginButtonClicked()
 	// Put your "OnButtonClicked" stuff here
 	FText DialogText = FText::FromString("Change sky Time");
 	FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+
+	AActor* FoundActor;
+	FoundActor = FindActor(ADirectionalLight::StaticClass());
+
+	if (FoundActor) {
+		ADirectionalLight* sun = Cast<ADirectionalLight>(FoundActor);
+		if (sun) {
+			sun->GetLightComponent()->SetIntensity(1.f);
+		}
+	}
 }
 
 void FNightSwitcherModule::RegisterMenus()
@@ -76,7 +88,7 @@ void FNightSwitcherModule::RegisterMenus()
 	}
 }
 
-AActor* FNightSwitcherModule::FindObject(TSubclassOf<AActor> ActorClass)
+AActor* FNightSwitcherModule::FindActor(TSubclassOf<AActor> ActorClass)
 {
 	TArray<AActor*> FoundActors;
 	UWorld* World = GEditor->GetEditorWorldContext().World();

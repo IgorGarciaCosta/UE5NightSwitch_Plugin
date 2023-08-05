@@ -42,7 +42,15 @@
             "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
             "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
             "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
-            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h"
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\engine\\directionallight.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\engine\\light.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\light.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\directionallight.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponent.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponentbase.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\lightcomponentbase.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\lightcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

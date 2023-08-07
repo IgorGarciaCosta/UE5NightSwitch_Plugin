@@ -1,5 +1,6 @@
 ﻿  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" NightSwitchPluginEditor Win64 Development -Project="C:\Users\ISILV125\Documents\Unreal Projects\NightSwitchPlugin\NightSwitchPlugin.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\ISILV125\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (C:\Users\ISILV125\Documents\Unreal Projects\NightSwitchPlugin).
+  Invalidating makefile for NightSwitchPluginEditor (working set of source files changed)
   Unable to build while Live Coding is active. Exit the editor and game, or press Ctrl+Alt+F11 if iterating on code in the editor or game
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(44,5): error MSB3073: The command ""C:\Program Files\Epic Games\UE_5.1\Engine\Build\BatchFiles\Build.bat" NightSwitchPluginEditor Win64 Development -Project="C:\Users\ISILV125\Documents\Unreal Projects\NightSwitchPlugin\NightSwitchPlugin.uproject" -WaitMutex -FromMsBuild" exited with code 6.

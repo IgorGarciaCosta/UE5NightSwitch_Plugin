@@ -50,32 +50,51 @@ void FNightSwitcherModule::ShutdownModule()
 void FNightSwitcherModule::PluginButtonClicked()
 {
 	// Put your "OnButtonClicked" stuff here
-	FText DialogText = FText::FromString("Change sky Time");
-	FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+	/*FText DialogText = FText::FromString("Change sky Time");
+	FMessageDialog::Open(EAppMsgType::OkCancel, DialogText);*/
 
-	AActor* FoundActor;
-	FoundActor = FindActor(ADirectionalLight::StaticClass());
+	FText DialogText = FText::FromString(TEXT("Changing sky Time"));
+	EAppReturnType::Type ReturnType = FMessageDialog::Open(EAppMsgType::OkCancel, DialogText);
 
-	if (FoundActor) {
-		ADirectionalLight* sun = Cast<ADirectionalLight>(FoundActor);
-		if (sun) {
-			sun->GetLightComponent()->SetIntensity(1.f);
+
+	//clicked OK
+	if (ReturnType == EAppReturnType::Ok)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("ok"));
+		//changes sky time
+		AActor* FoundActor;
+		FoundActor = FindActor(ADirectionalLight::StaticClass());
+
+		if (FoundActor) {
+			ADirectionalLight* sun = Cast<ADirectionalLight>(FoundActor);
+			if (sun) {
+				sun->GetLightComponent()->SetIntensity(1.f);
+			}
 		}
+
+		APostProcessVolume* PPVol;
+
+		FoundActor = FindActor(APostProcessVolume::StaticClass());
+		if (!FoundActor) {
+			DialogText = FText::FromString("Post Process volume not found! Creating One");
+			FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+			FoundActor = AddActor(APostProcessVolume::StaticClass());
+		}
+
+
+		//configures ppvolume
+		PPVol = Cast< APostProcessVolume>(FoundActor);
+		PPVol->Settings.AutoExposureBias = -3.f;
+		PPVol->Settings.bOverride_AutoExposureBias = true;
+		PPVol->bUnbound = true;//finite extent
+	}
+	
+	//clicked Cancel
+	else if (ReturnType == EAppReturnType::Cancel)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("cancel"));
 	}
 
-	APostProcessVolume* PPVol;
-
-	FoundActor = FindActor(APostProcessVolume::StaticClass());
-	if (!FoundActor) {
-		DialogText = FText::FromString("Post Process volume not found! Creating One");
-		FMessageDialog::Open(EAppMsgType::Ok, DialogText);
-		FoundActor = AddActor(APostProcessVolume::StaticClass());
-	}
-
-	PPVol = Cast< APostProcessVolume>(FoundActor);
-	PPVol->Settings.AutoExposureBias = -3.f;
-	PPVol->Settings.bOverride_AutoExposureBias = true;
-	PPVol->bUnbound = true;//finite extent
 
 }
 

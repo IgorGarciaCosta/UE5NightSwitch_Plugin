@@ -53,49 +53,31 @@ void FNightSwitcherModule::PluginButtonClicked()
 	/*FText DialogText = FText::FromString("Change sky Time");
 	FMessageDialog::Open(EAppMsgType::OkCancel, DialogText);*/
 
-	FText DialogText = FText::FromString(TEXT("Changing sky Time"));
-	EAppReturnType::Type ReturnType = FMessageDialog::Open(EAppMsgType::OkCancel, DialogText);
+	if (!bIsNight) {
+		FText DialogText = FText::FromString(TEXT("Changing sky Time"));
+		EAppReturnType::Type ReturnType = FMessageDialog::Open(EAppMsgType::OkCancel, DialogText);
 
-
-	//clicked OK
-	if (ReturnType == EAppReturnType::Ok)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("ok"));
-		//changes sky time
-		AActor* FoundActor;
-		FoundActor = FindActor(ADirectionalLight::StaticClass());
-
-		if (FoundActor) {
-			ADirectionalLight* sun = Cast<ADirectionalLight>(FoundActor);
-			if (sun) {
-				sun->GetLightComponent()->SetIntensity(1.f);
-			}
+		//clicked OK
+		if (ReturnType == EAppReturnType::Ok)
+		{
+			SwitchFromDay();
 		}
-
-		APostProcessVolume* PPVol;
-
-		FoundActor = FindActor(APostProcessVolume::StaticClass());
-		if (!FoundActor) {
-			DialogText = FText::FromString("Post Process volume not found! Creating One");
-			FMessageDialog::Open(EAppMsgType::Ok, DialogText);
-			FoundActor = AddActor(APostProcessVolume::StaticClass());
+		//clicked Cancel
+		else if (ReturnType == EAppReturnType::Cancel)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Cancelled"));
 		}
-
-
-		//configures ppvolume
-		PPVol = Cast< APostProcessVolume>(FoundActor);
-		PPVol->Settings.AutoExposureBias = -3.f;
-		PPVol->Settings.bOverride_AutoExposureBias = true;
-		PPVol->bUnbound = true;//finite extent
 	}
 	
-	//clicked Cancel
-	else if (ReturnType == EAppReturnType::Cancel)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("cancel"));
+	
+	
+	//clicked OK, but its night already
+	else if (bIsNight) {
+		//set directional light again to 1
+		//destroy ppvol
+		SwitchFromNight();
+
 	}
-
-
 }
 
 void FNightSwitcherModule::RegisterMenus()
@@ -141,6 +123,72 @@ AActor* FNightSwitcherModule::AddActor(TSubclassOf<AActor> ActorClass)
 	ULevel* Level = GEditor->GetEditorWorldContext().World()->GetCurrentLevel();
 	return GEditor->AddActor(Level, ActorClass, FTransform());
 
+}
+
+void FNightSwitcherModule::SetDirectionalLightIntensity(bool status, float Intensity)
+{
+	//changes sky time
+	AActor* FoundActor;
+	FoundActor = FindActor(ADirectionalLight::StaticClass());
+
+	if (FoundActor) {
+		ADirectionalLight* sun = Cast<ADirectionalLight>(FoundActor);
+		if (sun) {
+			sun->GetLightComponent()->SetIntensity(Intensity);
+			bIsNight = status;
+		}
+	}
+}
+
+void FNightSwitcherModule::ConfigurePPvol(bool status, AActor* FoundActor)
+{
+	APostProcessVolume* PPVol;
+	PPVol = Cast< APostProcessVolume>(FoundActor);
+	//is day
+	if (!status) {
+		//configures ppvolume
+		
+		PPVol->Settings.AutoExposureBias = -3.f;
+		PPVol->Settings.bOverride_AutoExposureBias = true;
+		PPVol->bUnbound = true;//finite extent
+	}
+
+	//is night
+	else {
+		PPVol->Destroy();
+	}
+	
+}
+
+
+
+void FNightSwitcherModule::SwitchFromDay()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Activated"));
+
+	SetDirectionalLightIntensity(true,0.2f);
+
+	
+
+	AActor* FoundActor = FindActor(APostProcessVolume::StaticClass());
+	if (!FoundActor) {
+		FText DialogText = FText::FromString("Post Process volume not found! Creating One");
+		FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+		FoundActor = AddActor(APostProcessVolume::StaticClass());
+	}
+
+	ConfigurePPvol(false, FoundActor);
+	
+}
+
+void FNightSwitcherModule::SwitchFromNight()
+{
+	SetDirectionalLightIntensity(false, 1.f);
+	AActor* FoundActor = FindActor(APostProcessVolume::StaticClass());
+	if (FoundActor) {
+		ConfigurePPvol(true, FoundActor);
+	}
+	
 }
 
 #undef LOCTEXT_NAMESPACE

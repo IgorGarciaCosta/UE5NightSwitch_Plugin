@@ -23,8 +23,15 @@ private:
 
 	void RegisterMenus();
 
+	bool bIsNight = false;
 	AActor* FindActor(TSubclassOf<AActor> ActorClass);
 	AActor* AddActor(TSubclassOf<AActor> ActorClass);
+
+	void SetDirectionalLightIntensity(bool status, float Intensity);
+	void ConfigurePPvol(bool status, AActor* FoundActor);
+
+	void SwitchFromDay();
+	void SwitchFromNight();
 
 
 private:
